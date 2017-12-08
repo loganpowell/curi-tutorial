@@ -1,0 +1,33 @@
+{
+  "name": "curi-tutorial",
+  "version": "1.0.0",
+  "description": "This repo hosts the code for the official Curi tutorials.",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "@curi/core": "^1.0.0-beta.23",
+    "@hickory/browser": "^1.0.0-beta.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.34",
+    "@babel/preset-env": "^7.0.0-beta.34",
+    "babel-loader": "^8.0.0-beta.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pshrmn/curi-tutorial.git"
+  },
+  "keywords": [
+    "curi",
+    "tutorial"
+  ],
+  "author": "Paul Sherman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pshrmn/curi-tutorial/issues"
+  },
+  "homepage": "https://github.com/pshrmn/curi-tutorial#readme"
+}
