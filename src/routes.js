@@ -5,6 +5,8 @@ import Book from './components/Book';
 import Checkout from './components/Checkout';
 import NotFound from './components/NotFound';
 
+import { fetchAllBooks, fetchBook } from './api/books';
+
 const routes = [
   {
     name: 'Home',
@@ -37,17 +39,26 @@ const routes = [
     name: 'Book List',
     path: 'books',
     match: {
-      response: ({ set }) => {
+      every: () => fetchAllBooks(),
+      response: ({ resolved, set }) => {
         set.body(BookList);
+        set.data({ books: resolved.every });
       }
     },
     children: [
       {
         name: 'Book',
         path: ':id',
+        params: { id: n => parseInt(n, 10) },
         match: {
-          response: ({ set }) => {
+          every: ({ params }) => fetchBook(params.id),
+          response: ({ error, resolved, set }) => {
             set.body(Book);
+            if (error) {
+              set.error(error);
+            } else {
+              set.data({ book: resolved.every });
+            }
           }
         }
       }
