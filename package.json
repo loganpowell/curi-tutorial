@@ -7,12 +7,16 @@
   },
   "dependencies": {
     "@curi/core": "^1.0.0-beta.24",
-    "@hickory/browser": "^1.0.0-beta.5"
+    "@curi/vue": "^1.0.0-beta.14",
+    "@hickory/browser": "^1.0.0-beta.5",
+    "vue": "^2.5.9"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.34",
     "@babel/preset-env": "^7.0.0-beta.34",
     "babel-loader": "^8.0.0-beta.0",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.9",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },

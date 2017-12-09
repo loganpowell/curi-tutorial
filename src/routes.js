@@ -1,10 +1,17 @@
+import Home from './components/Home';
+import Contact from './components/Contact';
+import BookList from './components/BookList';
+import Book from './components/Book';
+import Checkout from './components/Checkout';
+import NotFound from './components/NotFound';
+
 const routes = [
   {
     name: 'Home',
     path: '',
     match: {
       response: ({ set }) => {
-        set.body('Home');
+        set.body(Home);
       }
     }
   },
@@ -13,7 +20,7 @@ const routes = [
     path: 'contact',
     match: {
       response: ({ set }) => {
-        set.body('Contact');
+        set.body(Contact);
       }
     }
   },
@@ -22,7 +29,7 @@ const routes = [
     path: 'checkout',
     match: {
       response: ({ set }) => {
-        set.body('Checkout');
+        set.body(Checkout);
       }
     }
   },
@@ -31,7 +38,7 @@ const routes = [
     path: 'books',
     match: {
       response: ({ set }) => {
-        set.body('Book List');
+        set.body(BookList);
       }
     },
     children: [
@@ -40,7 +47,7 @@ const routes = [
         path: ':id',
         match: {
           response: ({ set }) => {
-            set.body('Book');
+            set.body(Book);
           }
         }
       }
@@ -51,7 +58,7 @@ const routes = [
     path: '(.*)',
     match: {
       response: ({ set }) => {
-        set.body('Not Found');
+        set.body(NotFound);
       }
     }
   }

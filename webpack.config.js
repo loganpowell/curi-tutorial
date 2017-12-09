@@ -7,11 +7,21 @@ const config = {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.vue'],
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  },
   module: {
     rules: [
       {
         test: /.js$/,
         use: 'babel-loader'
+      },
+      {
+        test: /.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
