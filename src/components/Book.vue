@@ -7,16 +7,20 @@
     <p>By {{book.author}}</p>
     <p>Published in {{book.published}}</p>
     <p>This book is {{book.pages}} pages</p>
+    <AddToCart :bookID="book.id" />
   </div>
 </template>
 
 <script>
+  import AddToCart from './AddToCart';
+
   export default {
     computed: {
       book: function() {
         const { response } = this.$curi;
         return !response.error && response.data.book;
       }
-    }
+    },
+    components: { AddToCart }
   };
 </script>
