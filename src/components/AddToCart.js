@@ -1,5 +1,5 @@
 import React from 'react';
-import { curious } from '@curi/react';
+import { Curious } from '@curi/react';
 
 import { updateCart } from '../api/shoppingCart';
 
@@ -46,4 +46,8 @@ class AddToCart extends React.Component {
   }
 }
 
-export default curious(AddToCart);
+export default props => (
+  <Curious render={({ router }) => (
+    <AddToCart router={router} {...props} />
+  )} />
+);
