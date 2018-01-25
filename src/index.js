@@ -11,10 +11,11 @@ const history = Browser();
 const router = curi(history, routes);
 
 let root = document.getElementById('root');
-router.respond(response => {
+router.respond((response, navigation) => {
   ReactDOM.render((
     <CuriBase
       response={response}
+      navigation={navigation}
       router={router}
       render={render}
     />
